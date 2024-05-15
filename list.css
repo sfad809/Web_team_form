@@ -1,0 +1,14 @@
+.listElement
+{
+	background-color:#2a2a44;
+
+	display: inline-block;
+	margin: 10px;
+
+	border-radius: 20px;
+	
+	width:200px;
+	height:250px;
+}
+
+.desc { margin-top: 30px; margin-bottom: 10px; }

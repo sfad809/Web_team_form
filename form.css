@@ -1,0 +1,22 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+input { border: 0; }
+iframe { border: 0; }
+select { border: 0; }
+button { border: 0; background:none;  }
+a { text-decoration-line: none; padding: 10px; }
+
+body { background-color: #dbd4be; }
+body::-webkit-scrollbar { display: none; }
+
+.mainBox
+{
+	align-items: center;
+
+	margin-left: 15%;
+	width: 70%;
+}

@@ -1,0 +1,20 @@
+.questionBox
+{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.questionElement
+{
+	background-color:#4e4e5e;
+
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+
+	border-radius: 5px;
+	
+	width:800px;
+}
