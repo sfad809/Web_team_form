@@ -1,0 +1,32 @@
+.question_container { /* border 색 변경 (하늘 -> 핑크) */
+	border-top: solid 12px rgb(231, 168, 231);
+	border-left: solid 6px rgb(182, 131, 182);
+}
+
+.question_name { /* 배경 색 및 폰트 사이즈 변경 */
+	background-color: white;
+
+	margin: 20px 0px 20px 0px;
+	padding: 0px;
+
+	font-size: 29px;
+}
+
+/* submit용 버튼 */
+.btn_submit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	color: red;
+
+	border-color: white;
+	border-radius: 7px;
+
+	width: 102px;
+	height: 47px;
+}
+.btn_submit:hover {
+	background-color: rgb(218, 218, 212);
+
+	text-decoration: none;
+	color: red;
+}

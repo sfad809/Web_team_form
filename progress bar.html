@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>progress bar</title>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #F0EBF8;
+}
+.container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    background-color: ghostwhite;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.canvas-container {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.canvas {
+    flex: 1;
+    height: 70px;
+    background-color: ghostwhite;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-right: 20px; /* 간격 조정 */
+}
+.percentage-wrapper {
+    width: 60px; /* 고정된 너비 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.percentage {
+    color: black;
+    font-size: 18px;
+}
+.tick-container {
+    width: 85%;
+    position: relative;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: 110px;
+}
+.tick {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: black;
+    font-size: 13px;
+}
+.label {
+    font-size: 18px;
+    margin-right: 30px;
+    width: 80px;
+    text-align: right;
+}
+.tick:nth-child(1) { left: -0.7%; }
+.tick:nth-child(2) { left: 9.3%; }
+.tick:nth-child(3) { left: 19.1%; }
+.tick:nth-child(4) { left: 29%; }
+.tick:nth-child(5) { left: 38.8%; }
+.tick:nth-child(6) { left: 48.7%; }
+.tick:nth-child(7) { left: 58.5%; }
+.tick:nth-child(8) { left: 68.4%; }
+.tick:nth-child(9) { left: 78.2%; }
+.tick:nth-child(10) { left: 88.1%; }
+.tick:nth-child(11) { left: 98%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="canvas-container">
+        <div class="label">옵션 1</div>
+        <canvas class="canvas" id="canvas1" width="800" height="70"></canvas>
+        <div class="percentage-wrapper">
+            <div class="percentage" id="percentage1">0%</div>
+        </div>
+    </div>
+
+    <div class="canvas-container">
+        <div class="label">옵션 2</div>
+        <canvas class="canvas" id="canvas2" width="800" height="70"></canvas>
+        <div class="percentage-wrapper">
+            <div class="percentage" id="percentage2">0%</div>
+        </div>
+    </div>
+    <!-- 추가 캔버스 컨테이너를 여기에 추가. -->
+    <div class="tick-container">
+        <div class="tick">0.0</div>
+        <div class="tick">0.1</div>
+        <div class="tick">0.2</div>
+        <div class="tick">0.3</div>
+        <div class="tick">0.4</div>
+        <div class="tick">0.5</div>
+        <div class="tick">0.6</div>
+        <div class="tick">0.7</div>
+        <div class="tick">0.8</div>
+        <div class="tick">0.9</div>
+        <div class="tick">1.0</div>
+    </div>
+</div>
+
+<script>
+function setCanvasProgress(canvasId, percentageId, percentage) {
+    drawProgressBar(canvasId, percentage);
+    updateProgress(percentageId, percentage);
+}
+
+function drawProgressBar(canvasId, percentage) {
+    var canvas = document.getElementById(canvasId);
+    var context = canvas.getContext('2d');
+    var width = canvas.width;
+    var height = canvas.height;
+    
+    context.clearRect(0, 0, width, height);
+    
+    // 배경 그리기
+    context.fillStyle = 'ghostwhite';
+    context.fillRect(0, 0, width, height);
+    
+    // 진행률 바 그리기
+    context.fillStyle = '#4B0082';
+    var progressWidth = (width * percentage) / 100;
+    context.fillRect(0, 0, progressWidth, height);
+}
+
+function updateProgress(percentageId, percentage) {
+    var percentageLabel = document.getElementById(percentageId);
+    percentageLabel.textContent = percentage + '%';
+}
+
+
+    // 캔버스 1 설정 max = 100
+    setCanvasProgress('canvas1', 'percentage1', 70);
+
+    // 캔버스 2 설정
+    setCanvasProgress('canvas2', 'percentage2', 50);
+
+    //캔버스 추가
+</script>
+</body>
+</html>

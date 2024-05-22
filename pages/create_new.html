@@ -1,39 +1,41 @@
-<html>
+<!DOCTYPE html>
 	<head>
 		<link rel="stylesheet" href="../form.css">
 		<link rel="stylesheet" href="css/question.css">
 		<link rel="stylesheet" href="css/create.css">
 	</head>
 	<body>
-		<iframe class="frame" src="menu_new.html"
-			width="100%" height="100px" scrolling="no">
+		<iframe class="frame" src="menu_new.html" width="100%" height="100px" scrolling="no">
 		</iframe>
 
-		<div class="questionBox">
-			<p>Create New</p>
-			<!-- One Element -->
-			<div class="questionElement">
-				<iframe class="create_question_data" src="create_elements/create_question_data.html">
-				</iframe>
+		<div id="container">
+			<fieldset class="question_container">
+				<h1 id="title">새 설문지</h1>
+				<hr style="background-color: #94d9f0;">
 
-				<!-- Option -->
-				<div class="create_question_option">
-					<input type="radio">
-					<span>옵션 1</span>
-				</div>
-			</div>
-
-			<div class="questionElement">
-				<iframe class="create_question_data" src="create_elements/create_question_data.html">
-				</iframe>
-
-				<!-- Option -->
-				<div class="create_question_option">
-					<input type="radio">
-					<span>옵션 1</span>
-				</div>
-			</div>
-
+				<div id="description">설문 설명</div>
+			</fieldset>
 		</div>
+
+		<fieldset class="small_menu">
+			<button type="submit" class="menu" onclick="createQuestion()">
+				<img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.lovepik.com%2Fpng%2F20231019%2Fcorrect-correct-icon-checkmark-cartoon_269350_wh860.png&type=sc960_832" height="15" width="15"alt="">
+				<span>&nbsp;새 질문</span>
+			</button>
+			<hr>
+			
+			<button type="submit" class="menu">
+				<img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.lovepik.com%2Fpng%2F20231019%2Fcorrect-correct-icon-checkmark-cartoon_269350_wh860.png&type=sc960_832" height="15" width="15"alt="">
+				<span>&nbsp;NULL</span>
+			</button>
+			<hr>
+			
+			<button type="submit" class="menu">
+				<img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.lovepik.com%2Fpng%2F20231019%2Fcorrect-correct-icon-checkmark-cartoon_269350_wh860.png&type=sc960_832" height="15" width="15"alt=""> 
+				<span>&nbsp;NULL</span>
+			</button>
+		</fieldset>
+
+		<script src="js/create.js"></script>
 	</body>
 </html>

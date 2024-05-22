@@ -1,10 +1,37 @@
-.create_question_data
-{
-	width: 80%;
-	height:40px;
+.question_frame { /* iframe js로 clone 만들기 용도 */
+	width: 830px;
+	height: 300px;
 }
-.create_question_option
-{
-	width: 80%;
-	height:20px;
+
+.option { /* 질문 옵션 */
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.small_menu {
+	background-color: white;
+	
+	position: absolute;
+	top: 120px;
+	right: 20vh;
+
+	padding: 5px 10px 10px 5px;
+
+	width: 150px;
+	height: 128px;
+}
+.menu {
+	background-color: transparent;
+	
+	padding : 5px 10px 10px 5px ;
+
+	width: inherit;
+
+	display: flex;
+	align-items: flex-start;
+}
+.menu:hover {
+	background-color: #f0f0f0;
+	
+	cursor: pointer;
 }

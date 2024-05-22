@@ -8,15 +8,11 @@ input { border: 0; }
 iframe { border: 0; }
 select { border: 0; }
 button { border: 0; background:none;  }
-a { text-decoration-line: none; padding: 10px; }
+hr { margin: 8px 0px 8px 0px; }
+a {
+	text-decoration: none;
+	color: rgb(31, 194, 194);
+}
 
 body { background-color: #dbd4be; }
 body::-webkit-scrollbar { display: none; }
-
-.mainBox
-{
-	align-items: center;
-
-	margin-left: 15%;
-	width: 70%;
-}

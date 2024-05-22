@@ -1,14 +1,30 @@
-.listElement
+.list_container
 {
-	background-color:#2a2a44;
+	align-items: center;
 
+	margin-left: 15%;
+	width: 70%;
+}
+.desc { margin-top: 30px; margin-bottom: 10px; }
+
+.listElement0, .listElement1, .listElement2, .listElement3, .listElement4
+{
 	display: inline-block;
 	margin: 10px;
+	padding: 10px;
 
+	border: 1px  solid rgb(194, 193, 193);
 	border-radius: 20px;
-	
+	box-sizing: border-box;
+
 	width:200px;
 	height:250px;
+
+	color: rgb(230, 140, 24);
 }
 
-.desc { margin-top: 30px; margin-bottom: 10px; }
+.listElement0 { background-color: rgb(255, 255, 255); }
+.listElement1 { background-color: rgb(241, 224, 248); }
+.listElement2 { background-color: rgb(222, 243, 219); }
+.listElement3 { background-color: rgb(255, 246, 237); }
+.listElement4 { background-color: rgb(238, 244, 248); }

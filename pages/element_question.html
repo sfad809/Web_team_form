@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../form.css">
+		<link rel="stylesheet" href="css/question.css">
+		<link rel="stylesheet" href="css/create.css">
+
+		<style>
+			.create_question_type {
+				position: absolute; /* 타입 드롭다운 오른쪽에 배치 */
+
+				right: 40px;
+
+				width: 140px;
+				height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset class="question_container">
+		<br>
+			<div>
+			<textarea class="question_name" rows="2" cols="50" name="contents"
+				placeholder="질문 제목을 입력하세요" maxlength=24"></textarea>
+				
+				<span class="create_question_type">
+					<select id="selectType" onchange="changeOptionType()">
+						<option>
+							<span>[[Img]]</span>
+							<span>라디오 버튼</span>
+						</option>
+						<option>
+							<span>[[Img]]</span>
+							<span>체크박스</span>
+						</option>
+						<option>
+							<span>[[Img]]</span>
+							<span>드롭다운</span>
+						</option>
+						<option>
+							<span>[[Img]]</span>
+							<span>단답형</span>
+						</option>
+					</select>
+				</span>
+				<br>
+
+				<div style="font-size:0.7em" id="options">
+					<div id="option_0" class="option">
+						<input type="radio" name="o" disabled>&nbsp;<span class="optionName">옵션 1</span>
+					</div>
+					<div id="option_1" class="option">
+						<input type="radio" name="o" disabled>&nbsp;<span class="optionName">옵션 2</span>
+					</div>
+				</div>
+
+				<span style="font-size:0.7em" id="text" class="answer">
+					<input type="text" placeholder="단답형 텍스트" disabled>
+				</span>
+
+				<button id="addOption" onclick="addOption()">&nbsp;옵션 추가 또는 '기타' 추가</button>
+			</div>
+		</fieldset>
+
+		<script>
+			changeOptionType();
+
+			function changeOptionType() {
+				var select = document.getElementById("selectType");
+
+				var options = document.getElementById("options");
+				var text = document.getElementById("text");
+				var add = document.getElementById("addOption");
+
+				if(select.selectedIndex < 3)
+				{
+					if(text.style.display != "none")
+					{
+						text.style.display = "none";
+						options.style.display = "block";
+						add.style.display = "block";
+					}
+					var newType = select.selectedIndex == 1 ? "checkbox" : "radio";
+					
+					var options = document.getElementById("options");
+					var inputs = options.querySelectorAll("input");
+					inputs.forEach(input => { input.type = newType; });
+				}
+				else
+				{
+					options.style.display = "none";
+					add.style.display = "none";
+					text.style.display = "block";
+				}
+			}
+
+			function addOption() {
+				var options = document.getElementById("options");
+				
+				var length = options.children.length-1;
+				if(length > 3)
+				{
+					alert("5개");
+					return;
+				}
+
+				var lastOption = options.children[length];
+				
+				var newNode = lastOption.cloneNode(true);
+				newNode.id = "option_" + length;
+				newNode.children[1].innerHTML = "옵션 " + (length+2);
+
+				lastOption.after(newNode);
+			}
+		</script>
+	</body>
+</html>

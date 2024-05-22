@@ -1,20 +1,59 @@
-.questionBox
+/*
+create, result, survey에서 공용으로 쓰이는 클래스, 아이디들
+*/
+
+#container /* 중앙 정렬 컨테이너 */
 {
+	position: relative;
+
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+
+	padding-top: 30px;
 }
 
-.questionElement
-{
-	background-color:#4e4e5e;
+.question_container { /* 질문 하나 당 컨테이너 */
+	background-color:white;
 
-	display: inline-block;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding: 10px;
+	width: 800px;
 
-	border-radius: 5px;
+	margin: 20px 0px 40px 0px;
+	padding: 1px 10px 10px 10px; /*위 오른쪽 아래 왼쪽*/
 	
-	width:800px;
+	border-top: solid 10px #94c7d8;
+	border-left: solid 6px #7ab0c2;
+	border-right : solid 2px #bcc8cd;
+	border-bottom : solid 2px #5d6265;
+	border-radius: 7px 2px 2px 7px;
+}
+
+#title { /* 설문 제목 */
+	margin: 16px 0px 16px 0px;
+	font-size: 29px;
+}
+#description { /* 설문 설명 */
+	margin: 16px 0px 16px 0px;
+	color : #5d6265;
+	font-size: 0.7em;
+}
+
+.question_name { /* 질문 제목 */
+	background-color : #f0f0f0;
+
+	padding : 12px 0px 0px 10px;
+
+	border : 0px;
+}
+
+.answer /* 단답형 or 그냥 text input */
+{
+	border: 0;
+	border-width: 0; /* border-width 는 input 테두리 모두 제거, outline 속성을 이용하여 none으로 설정할 경우 마우스 가까이 갔을 때 나타나는 테두리 제거 */
+	outline: none;
+
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	font-size: 14px;
 }
