@@ -1,0 +1,39 @@
+@import url("../../form.css");
+@import url("page.css");
+
+/* barGraph */
+.bar-container {
+	margin: 20px;
+	padding: 20px;
+}
+
+.bar_body {
+	background-color: white;
+}
+
+.bar_option {
+	font-size: 16px; /* 라벨 텍스트 크기를 키움 */
+}
+
+.percentage {
+	font-size: 13px;
+}
+
+/* pieChart */
+.pieChart_canvas {
+	display: inline-block;
+}
+.chart_options {
+	display: inline-block;
+}
+
+.option_circle {
+	display: inline-block;
+
+	margin: 10px;
+	padding: 10px;
+
+	border-radius: 50%;
+
+	color: white;
+}

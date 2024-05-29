@@ -1,0 +1,59 @@
+.create_question_name { /* 만들기 용 question_name */
+	background-color : #f0f0f0;
+
+	margin-top: 10px;
+	padding : 12px 0px 0px 10px;
+
+	border: 0px;
+}
+
+.create_question_type { /* 질문 타입 변경 드롭다운 */
+	float: inline-end;
+	
+	margin: 15px 10px 0px 0px;
+}
+
+.option { /* 질문 옵션 */
+	margin: 15px 0px 15px 5px;
+}
+
+.optionName {
+	display: inline-block;
+
+	margin-left: 10px;
+
+	width: 350px;
+
+	border-bottom: solid 0px #5d6265;
+}
+.optionName:focus{
+	outline: 0px;
+
+	border-width: 0px 0px 1px 0px;
+}
+
+.answer /* 단답형 or 그냥 text input */
+{
+	border: 0;
+	border-width: 0;
+	/* border-width 는 input 테두리 모두 제거, outline 속성을 이용하여 none으로 설정할 경우 마우스 가까이 갔을 때 나타나는 테두리 제거 */
+	outline: none;
+
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	font-size: 14px;
+}
+
+.addOption {
+    background-color: WHITE;
+
+    border:0px;
+	
+    color:#5d6265;
+}
+.addOption:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color : black;
+}

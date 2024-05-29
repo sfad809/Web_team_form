@@ -1,23 +1,6 @@
-.question_container { /* border 색 변경 (하늘 -> 하양) */
-	background-color: ghostwhite;
-
-	border-color: ghostwhite;
-	border-radius: 10px;
-
-	margin: 10px 0px 20px 0px;
-	padding: 10px;
-
-	min-height: 100px;
-}
-
-.question_name { /* 배경 색 및 폰트 사이즈 변경 */
-	background-color: ghostwhite;
-
-	margin: 0px 0px 10px 0px;
-	padding: 0px;
-
-	font-size: 29px;
-}
+/* result page 전용 */
+@import url("page.css");
+@import url("element_result.css");
 
 .result_answer { /* result 전용 단답형 */
 	display: flex;

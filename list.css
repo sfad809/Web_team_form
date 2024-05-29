@@ -1,11 +1,19 @@
+@import url("form.css");
+
 .list_container
 {
 	align-items: center;
 
-	margin-left: 15%;
-	width: 70%;
+	margin-left: 10%;
+	width: 80%;
 }
-.desc { margin-top: 30px; margin-bottom: 10px; }
+.desc
+{
+	margin-top: 30px;
+	margin-bottom: 10px;
+
+	color: #C5C7D6;
+}
 
 .listElement0, .listElement1, .listElement2, .listElement3, .listElement4
 {
@@ -19,11 +27,10 @@
 
 	width:200px;
 	height:250px;
-
-	color: rgb(230, 140, 24);
 }
 
 .listElement0 { background-color: rgb(255, 255, 255); }
+.listElement button span { font-size: 15px; }
 .listElement1 { background-color: rgb(241, 224, 248); }
 .listElement2 { background-color: rgb(222, 243, 219); }
 .listElement3 { background-color: rgb(255, 246, 237); }

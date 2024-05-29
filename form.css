@@ -9,10 +9,8 @@ iframe { border: 0; }
 select { border: 0; }
 button { border: 0; background:none;  }
 hr { margin: 8px 0px 8px 0px; }
-a {
-	text-decoration: none;
-	color: rgb(31, 194, 194);
-}
+a { text-decoration: none; }
+ul { list-style: none; }
 
-body { background-color: #dbd4be; }
+body { background-color: #15171E; }
 body::-webkit-scrollbar { display: none; }

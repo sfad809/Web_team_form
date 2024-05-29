@@ -1,0 +1,49 @@
+/* page에서 공용으로 쓰는 id, class들 */
+@import url("../../form.css");
+
+#container /* 중앙 정렬 컨테이너 */
+{
+	position: relative;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+
+	padding-top: 30px;
+}
+
+.question_container { /* 질문 하나 당 컨테이너 */
+	background-color:white;
+
+	width: 800px;
+
+	margin: 10px 0px 20px 0px;
+	padding: 1px 10px 10px 10px;
+	
+	/*	border-top과 border-left는
+		create, survey, result에 따라 바뀌어야 함
+	
+		구글 폼 디자인을 따르지 않는다면
+		굳이 이 지침을 따를 필요가 없음 */
+	border-right : solid 2px #bcc8cd;
+	border-bottom : solid 2px #5d6265;
+	border-radius: 7px 2px 2px 7px;
+}
+
+#title { /* 설문 제목 */
+	margin: 16px 0px 16px 0px;
+	font-size: 29px;
+}
+
+.description { /* 설문 설명 */
+	margin: 16px 0px 16px 0px;
+	color : #5d6265;
+	font-size: 0.7em;
+}
+
+.question_name { /* 질문 제목 */
+	margin: 20px 0px 20px 0px;
+	padding: 0px;
+
+	font-size: 29px;
+}

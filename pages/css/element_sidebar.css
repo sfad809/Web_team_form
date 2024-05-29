@@ -1,0 +1,27 @@
+.small_menu {
+	background-color: white;
+	
+	position: absolute;
+	top: 50vh;
+	right: 2vh;
+
+	padding: 5px 10px 10px 5px;
+
+	width: 150px;
+	height: 128px;
+}
+.menu {
+	background-color: transparent;
+	
+	padding : 5px 10px 10px 5px ;
+
+	width: inherit;
+
+	display: flex;
+	align-items: flex-start;
+}
+.menu:hover {
+	background-color: #f0f0f0;
+	
+	cursor: pointer;
+}

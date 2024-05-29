@@ -1,10 +1,13 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="../form.css">
-		<link rel="stylesheet" href="css/question.css">
-		<link rel="stylesheet" href="css/create.css">
-
+		<link rel="stylesheet" href="css/element_question.css">
 		<style>
+			body {
+				background-color:white;
+
+				margin: 20px 0px 40px 0px;
+				padding: 1px 10px 10px 10px; /*위 오른쪽 아래 왼쪽*/
+			}
 			.create_question_type {
 				position: absolute; /* 타입 드롭다운 오른쪽에 배치 */
 
@@ -16,14 +19,22 @@
 		</style>
 	</head>
 	<body>
-		<fieldset class="question_container">
-		<br>
-			<div>
-			<textarea class="question_name" rows="2" cols="50" name="contents"
-				placeholder="질문 제목을 입력하세요" maxlength=24"></textarea>
-				
+		<div id="container">
+			<!-- Title -->
+			<fieldset class="question_container">
+				<h1 id="title">새 설문지</h1>
+				<hr style="background-color: #94d9f0;">
+
+				<div class="description">설문 설명</div>
+			</fieldset>
+
+			<!-- Question 0 -->
+			<fieldset class="question_container">
+				<textarea id="question_name_0" class="create_question_name"
+					rows="2" cols="50" name="contents" placeholder="질문 제목을 입력하세요" maxlength=24"></textarea>
+			
 				<span class="create_question_type">
-					<select id="selectType" onchange="changeOptionType()">
+					<select id="selectType_0" onchange="changeOptionType()">
 						<option>
 							<span>[[Img]]</span>
 							<span>라디오 버튼</span>
@@ -45,21 +56,22 @@
 				<br>
 
 				<div style="font-size:0.7em" id="options">
-					<div id="option_0" class="option">
-						<input type="radio" name="o" disabled>&nbsp;<span class="optionName">옵션 1</span>
+					<div id="option_0_0" class="option">
+						<input type="radio" name="o" disabled>
+						<input class="optionName" type="text" placeholder="옵션1">
 					</div>
-					<div id="option_1" class="option">
-						<input type="radio" name="o" disabled>&nbsp;<span class="optionName">옵션 2</span>
+					<div id="option_0_1" class="option">
+						<input type="radio" name="o" disabled>
+						<input class="optionName" type="text" placeholder="옵션2">
 					</div>
 				</div>
-
-				<span style="font-size:0.7em" id="text" class="answer">
+		
+				<div style="font-size:0.7em" id="answer_0" class="answer">
 					<input type="text" placeholder="단답형 텍스트" disabled>
-				</span>
-
-				<button id="addOption" onclick="addOption()">&nbsp;옵션 추가 또는 '기타' 추가</button>
-			</div>
-		</fieldset>
+				</div>
+			
+				<input id="addOption_0" class="addOption" type="button" value="옵션 추가 또는 '기타' 추가" onclick="addOption()">
+			</fieldset>
 
 		<script>
 			changeOptionType();
