@@ -1,9 +1,10 @@
 /* survey page 전용 */
 @import url("page.css");
+@import url("element_survey.css");
 
-.question_container { /* border 색 변경 (하늘 -> 핑크) */
-	border-top: solid 12px rgb(231, 168, 231);
-	border-left: solid 6px rgb(182, 131, 182);
+.question_container { /* border 색 변경 (하늘) */
+	border-top: solid 10px #94c7d8;
+	border-left: solid 6px #7ab0c2;
 }
 
 /* submit용 버튼 */

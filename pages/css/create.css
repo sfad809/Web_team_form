@@ -4,6 +4,36 @@
 @import url("element_sidebar.css");
 
 .question_container {
-	border-top: solid 10px #94c7d8;
-	border-left: solid 6px #7ab0c2;
+	border-top: 4px solid #50C785;
+}
+
+.question_container:focus-within {
+	border-top: 4px solid #50C785;
+	border-left: 4px solid #50C785;
+	border-right: 4px solid #50C785;
+	border-bottom: 4px solid #50C785;
+}
+
+.footer {
+	position: relative;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.new_question_button {
+	position: relative;
+
+	background-color:white;
+
+	border-radius: 10px;
+
+	width: 100px;
+
+	margin: 10px 0px 20px 0px;
+	padding: 1px 10px 10px 10px;
+
+	text-align: center;
+	font-size: 0.8em;
 }

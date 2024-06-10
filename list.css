@@ -2,9 +2,8 @@
 
 .list_container
 {
-	align-items: center;
-
 	margin-left: 10%;
+	
 	width: 80%;
 }
 .desc
@@ -35,3 +34,9 @@
 .listElement2 { background-color: rgb(222, 243, 219); }
 .listElement3 { background-color: rgb(255, 246, 237); }
 .listElement4 { background-color: rgb(238, 244, 248); }
+
+li { display: inline-block; }
+li a button span:hover
+{
+	cursor: pointer;
+}

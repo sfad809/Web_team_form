@@ -1,0 +1,70 @@
+.options {
+	font-size: 0.7em;
+}
+.option { /* 질문 옵션 */
+	display: block;
+	margin: 15px 0px 15px 5px;
+}
+.option:hover {
+	cursor: pointer;
+}
+.optionBtn {
+	width: 20px;
+	height: 20px;
+}
+.optionName {
+	display: inline-block;
+
+	margin-left: 10px;
+
+	width: 350px;
+
+	border-bottom: solid 0px #5d6265;
+}
+
+.answer, .long_answer
+{
+	border: 0;
+	border-width: 0;
+	border: solid 0px #5d6265;
+
+	/* border-width 는 input 테두리 모두 제거, outline 속성을 이용하여 none으로 설정할 경우 마우스 가까이 갔을 때 나타나는 테두리 제거 */
+	outline: none;
+
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	font-size: 14px;
+}
+.answer:focus{
+	border-width: 0px 0px 1px 0px;
+}
+.long_answer { resize: none; }
+.long_answer:focus
+{
+	border: 1px;
+	box-sizing: border-box;
+}
+
+/* star */
+.star_rating
+{
+	display: flex;
+}
+.star {
+	appearance: none;
+	margin: 20px;
+
+	font-size: 3em;
+}
+.star::after {
+	content: '☆';
+
+	color: hsl(56, 72%, 63%);
+}
+.star:hover::after {
+	content: '★';
+}
+.star:checked::after {
+	content: '★';
+}

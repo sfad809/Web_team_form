@@ -1,27 +1,142 @@
-.small_menu {
-	background-color: white;
-	
-	position: absolute;
-	top: 50vh;
-	right: 2vh;
+/* sidebar button */
+#showSidebar {
+	position: fixed;
 
-	padding: 5px 10px 10px 5px;
+	top: 50%;
+	right: 10px;
 
-	width: 150px;
-	height: 128px;
+	border: none;
+	border-radius: 8px;
+
+	width: 50px;
+	height: 50px;
 }
-.menu {
+#showSidebar img {
+	width: inherit;
+	height: inherit;
+}
+
+/* sidebar */
+.small_menu {
+	background-color: #15171E;
+	
+	display: none;
+	position: fixed;
+	top: 25%;
+	right: 0;
+
+	padding: 10px;
+
+	border-radius: 8px;
+
+	width: 250px;
+	height: 60%;
+	
+	color: #9094A8;
+}
+.menu_section {
+	height: 85%;
+
+	overflow-y: auto;
+}
+.menu_section::-webkit-scrollbar { display: none; }
+
+.first { color: #FFFFFF; margin-bottom: 8px; }
+.second { display: inline; }
+
+/* header */
+.menu_headers {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 10px;
+}
+.header {
+	cursor: pointer;
+
+	color: #E0E0E0;
+	font-size: 1.3em;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+.header:active {
+	color: #449C4A;
+}
+.header hr:acitve {
+	color: #449C4A;
+}
+
+/* 목차 */
+.chapter {
 	background-color: transparent;
 	
 	padding : 5px 10px 10px 5px ;
 
-	width: inherit;
+	min-width: 100%;
 
 	display: flex;
 	align-items: flex-start;
+
+	color: #9094A8;
 }
-.menu:hover {
-	background-color: #f0f0f0;
+.chapter:hover {
+	background-color: #E0E0E0;
 	
 	cursor: pointer;
+}
+.chapter:focus {
+	border: solid 3px #449C4A;
+}
+
+/* decoration */
+.colorList {
+	margin: 10px;
+}
+.colorList li { display: inline; }
+.color {
+	background-color: #c846f0;
+	border-radius: 50%;
+	border-style: none;
+
+	width: 30px;
+	height: 30px;
+}
+.color_selection {
+	background-color: #15171E;
+
+	margin: 10px;
+
+	border-radius: 10px;
+	outline: none;
+
+	width: 90%;
+
+	color: #9094A8;
+}
+.color:focus-visible {
+	outline: 1px solid #8CEF90;
+}
+
+#color1 { background-color: #8CEF90; }
+#color2 { background-color: #8086db; }
+#color3 { background-color: #eb8fb2; }
+#color4 { background-color: #c846f0; }
+#color5 { background-color: #ddab21; }
+#color6 { background-color: #e0d147; }
+#color7 { background-color: #e6b6be; }
+#color8 { background-color: #8cd0ef; }
+#color9 { background-color: #ffffff; }
+#color10 { background-color: #f1f1f1; }
+#color11 { background-color: #b1b3af; }
+#color12 { background-color: #b1b3af; }
+#color13 { background-color: #377a37; }
+#color14 { background-color: #308a28; }
+#color15 { background-color: #0d581e; }
+#color16 { background-color: #057025; }
+
+
+/* settings */
+.paragraph {
+	margin-left: 20px;
+	font-size: 13px;
 }

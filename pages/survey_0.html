@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/survey.css">
+		<script src="js/survey.js"></script>
 	</head>
 	<body>
 		<iframe class="frame" src="../menu_list.html" width="100%" height="100px" scrolling="no"></iframe>
@@ -16,21 +17,68 @@
 				<p id="account">123123144@gmail.com <a href="https://accounts.google.com" target="_blank">계정 전환</a></p>
 			</fieldset>
 
+			<!-- Form -->
 			<form>
-				<fieldset class="question_container">
-					<h1 class="question_name">이름</h1>
-					<hr>
-					<input class="answer" type="text" minlength="3" maxlength="12" placeholder="이름을 입력해주세요" required>
+				<fieldset id="question_0" class="question_container">
+					<div>
+						<h3 class="question_name">질문 제목</h3>
+						<p class="description">설명</p>
+						<hr>
+					</div>
+
+					<!-- radio checkbox -->
+					<div class="options">
+						<label class="option">
+							<input type="radio" name="question_0">
+							<div class="optionName">옵션 1</div>
+						</label>
+						<label class="option">
+							<input type="radio" name="question_0">
+							<div class="optionName">옵션 2</div>
+						</label>
+					</div>
+				
+					<!-- 단답형 -->
+					<input class="answer" type="text" minlength="3" maxlength="12">
+
+					<!-- 장문형 -->
+					<textarea class="long_answer" rows="4" cols="64"></textarea>
+
+					<!-- 별점형 -->
+					<div class="star_rating">
+						<input type="checkbox" class="star" name="star_0" onclick="star(0,1)">
+						<input type="checkbox" class="star" name="star_0" onclick="star(0,2)">
+						<input type="checkbox" class="star" name="star_0" onclick="star(0,3)">
+						<input type="checkbox" class="star" name="star_0" onclick="star(0,4)">
+						<input type="checkbox" class="star" name="star_0" onclick="star(0,5)">
+					</div>
 				</fieldset>
 
-				<fieldset class="question_container">
-					<h1 class="question_name">전화번호</h1>
-					<hr>
-					<input class="answer" type="tel" minlength="1" maxlength="12" placeholder="-를 제외하고 전화번호를 입력해주세요" required>
-				</fieldset>
-
-				<button class="btn_submit" type="submit">다음</button>
+				<div>
+					<button class="btn_submit" style="float:left;" type="button">이전</button>
+					<button class="btn_submit" style="float:right;" type="submit">다음</button>
+				</div>
 			</form>
+			<!-- Form End -->
 		</div>
+		<!-- container end -->
+
+		<script>
+			// 첫 번째는 set
+			// parameters [idx, name, description, type, options]
+			setQuestion(0, "빅빅", "스몰스몰", 0, ["하루", "빅뱅", "굳굳", "좋아좋아"]);
+
+			/* parameters [ title, description, type, options ]
+				type
+					0 : radio		options : options
+					1 : checkbox	options : options
+					2 : text		options : placeholder
+					3 : textarea	options : placeholder
+					4 : star		options : null
+			*/
+			createNewElement("질문 2", "설명 2", 2, "answer");
+			createNewElement("질문 3", "설명 3", 3, "is a long answer");
+			createNewElement("질문 4", "설명 4", 4, null);
+		</script>
 	</body>
 </html>

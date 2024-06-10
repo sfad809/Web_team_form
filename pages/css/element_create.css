@@ -1,3 +1,26 @@
+#title
+{
+	margin: 16px 0px 16px 0px;
+	padding-top: 8px;
+
+	outline: none;
+
+	font-size: 29px;
+	font-weight: bold;
+}
+.description
+{
+	margin: 16px 0px 16px 0px;
+
+	border: solid 0px #5d6265;
+	outline: none;
+
+	color: #5d6265;
+	font-size: 0.7em;
+
+	width: 400px;
+}
+
 .create_question_name { /* 만들기 용 question_name */
 	background-color : #f0f0f0;
 
@@ -5,26 +28,57 @@
 	padding : 12px 0px 0px 10px;
 
 	border: 0px;
+
+	resize: none;
+}
+
+.removeQuestion { /* 질문 삭제 버튼 */
+	float: right;
+	margin: 10px 30px 0px 0px;
+
+	padding: 10px 15px;
+
+	border: none;
+	border-radius: 20px;
+}
+.removeQuestion:hover {
+	background-color: #FF0000;
 }
 
 .create_question_type { /* 질문 타입 변경 드롭다운 */
-	float: inline-end;
-	
-	margin: 15px 10px 0px 0px;
+	float: right;
+	margin: 10px 30px 0px 0px;
+
+	width: 250px;
+	height: 40px;
+	text-align: center;
+	border: solid 1px #7ab0c2;
+	border-radius: 11px;
+}
+.create_question_type:focus {
+	text-align: center;
+	border: solid 1px #7ab0c2;
+	outline: 0px;
 }
 
 .option { /* 질문 옵션 */
 	margin: 15px 0px 15px 5px;
 }
-
+.etc {
+	margin: 15px 0px 15px 5px;
+}
+.optionBtn {
+	width: 20px;
+	height: 20px;
+}
 .optionName {
 	display: inline-block;
 
 	margin-left: 10px;
 
-	width: 350px;
-
 	border-bottom: solid 0px #5d6265;
+
+	width: 350px;
 }
 .optionName:focus{
 	outline: 0px;
@@ -32,7 +86,41 @@
 	border-width: 0px 0px 1px 0px;
 }
 
-.answer /* 단답형 or 그냥 text input */
+.addOption {
+	background-color: #d1e3e6;
+
+	display: inline;
+	padding: 7px;
+
+	border: 1px;
+	border-radius: 20px;
+	
+	color:#455381;
+}
+.addOption:hover {
+	cursor: pointer;
+
+	background-color: #c3e2e7;
+	color : white;
+}
+.addEtc {
+	background-color: #ebf4f5;
+
+	display: inline;
+	padding: 7px;
+
+	border:1px;
+	border-radius: 20px;
+
+	color:#70889c;
+}
+.addEtc:hover{
+	cursor: pointer;
+	background-color: #ceecf0;
+	color : white;
+}
+
+.answer, .long_answer
 {
 	border: 0;
 	border-width: 0;
@@ -44,16 +132,20 @@
 
 	font-size: 14px;
 }
+.long_answer { resize: none; }
 
-.addOption {
-    background-color: WHITE;
-
-    border:0px;
-	
-    color:#5d6265;
+.star_rating
+{
+	display: flex;
 }
-.addOption:hover{
-    cursor: pointer;
-    text-decoration: underline;
-    color : black;
+.star {
+	appearance: none;
+	margin: 20px;
+
+	font-size: 3em;
+}
+.star::after {
+	content: '☆';
+
+	color: hsl(56, 72%, 63%);
 }

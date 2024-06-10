@@ -21,6 +21,11 @@
 					<p class="description">설명</p>
 				</div>
 
+				<select class="result_change_type" onchange="changeType(0, 1)">
+					<option>막대 그래프</option>
+					<option>파이 차트</option>
+				</select>
+
 				<div class="barGraph">
 					<div class="bar-container">
 						<div class="bar_option">옵션 1</div>
@@ -38,16 +43,31 @@
 						</div>
 					</span>
 				</div>
+
+				<div class="answers">
+					<div class="answer">어쩔저쩔</div>
+					<div class="answer">어쩔테스트 저쩔테스트</div>
+				</div>
 			</fieldset>
 		</div>
 
 		<script>
-			/* 첫 번째는 지정해줘야 함 */
-			drawBarGraph(0, [30, 40, 2, 88]);
-			drawPieChart(0, [30, 40, 2, 88]);
-			changeType(0, true);
+			// 첫 번째는 set
+			// parameters [idx, name, description, type, optionDatas, optionNames]
+			setQuestion(0, "질문입니다", "설명입니다", 0,
+				[30, 40, 2, 88], // optionDatas
+				["1이구요", "2", "3em", "44"] // optionNames
+			);
 
-			createNewElement([30, 40, 2, 88], false);
+			// name, description, optionDatas, optionNames, isBarGraph
+			/* parameters [name, description, type, optionDatas, optionNames]
+			type
+				0	barGraph	data	names
+				1	pieChart	data	names
+				2	answer		data	null
+			*/
+			createNewElement("새 질문입니다", "새 설명입니다", 1, [80, 12, 33, 44], ["1", "2패", "3승", "4륜"]);
+			createNewElement("새새 질문입니다", "새새 설명입니다", 2, ["어쩔저쩔", "어쩔테스트", "저쩔테스트"], null);
 		</script>
 	</body>
 </html>

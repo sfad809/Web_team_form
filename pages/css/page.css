@@ -13,21 +13,18 @@
 }
 
 .question_container { /* 질문 하나 당 컨테이너 */
+	position: relative;
+
 	background-color:white;
 
 	width: 800px;
 
 	margin: 10px 0px 20px 0px;
 	padding: 1px 10px 10px 10px;
-	
-	/*	border-top과 border-left는
-		create, survey, result에 따라 바뀌어야 함
-	
-		구글 폼 디자인을 따르지 않는다면
-		굳이 이 지침을 따를 필요가 없음 */
-	border-right : solid 2px #bcc8cd;
-	border-bottom : solid 2px #5d6265;
+
 	border-radius: 7px 2px 2px 7px;
+	border-right: solid 2px #bcc8cd;
+	border-bottom: solid 2px #5d6265;
 }
 
 #title { /* 설문 제목 */

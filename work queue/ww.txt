@@ -1,6 +1,0 @@
-질문 타입 추가 (별점)
-
-설문 element 만들기
-element 만들 때 title, description, options 바꾸기
-
-템플릿 마구마구 만들기
