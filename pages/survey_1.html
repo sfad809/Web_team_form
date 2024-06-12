@@ -8,13 +8,13 @@
 
 		<div id="container">
 			<fieldset class="question_container">
-				<h1 id="title">loveCat님의 설문지</h1>
+				<h1 id="title">롤 포지션과 MBTI의 상관관계에 관한 설문</h1>
 				<hr style="background-color: rgb(231, 168, 231);">
 
-				<p class="description">설명</p>
+				<p class="description">바람과 같지 님의 설문입니다</p>
 				<hr>
 				
-				<p id="account">123123144@gmail.com <a href="https://accounts.google.com" target="_blank">계정 전환</a></p>
+				<p id="account">LeagueOfLegend@gmail.com <a href="https://accounts.google.com" target="_blank">계정 전환</a></p>
 			</fieldset>
 
 			<!-- Form -->
@@ -71,7 +71,7 @@
 		<script>
 			// 첫 번째는 set
 			// parameters [idx, name, description, type, options]
-			setQuestion(0, "고양이에 대한 호감도는?", "해삐 해삐 해-삐", 4, null);
+			setQuestion(0, "자신의 리그 오브 레전드 포지션은?", "", 0, ["탑", "정글", "미드", "원딜", "서폿"]);
 
 			/* createNewElement(title, description, type, options)
 				type
@@ -81,7 +81,7 @@
 					3 : textarea	options : placeholder
 					4 : star		options : null
 			*/
-			createNewElement("키우는 고양이의 종", "미묘 안 됩니다", 2, "입력해주세요");
+			createNewElement("MBTI", "PPAP 안 됩니다", 2, "입력해주세요");
 		</script>
 	</body>
 </html>

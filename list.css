@@ -36,6 +36,20 @@
 .listElement4 { background-color: rgb(238, 244, 248); }
 
 li { display: inline-block; }
+li a button
+{
+	display: flex;
+	flex-direction: column;
+}
+li a button span
+{
+	font-family: monospace;
+	font-size: 2em;
+
+	color: #886986;
+
+	width: 170px;
+}
 li a button span:hover
 {
 	cursor: pointer;

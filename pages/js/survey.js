@@ -32,7 +32,7 @@ function setQuestion(idx, name, desc, type, optNames)
 	switch(type)
 	{
 	case 0: case 1:
-		setOptions(idx, optNames, type==0);
+		setOptions(idx, optNames, type==1);
 		options.style.display = "block";
 	break;
 	case 2: case 3:
@@ -78,14 +78,31 @@ function setOptions(idx, optNames, isCheckbox)
 		input => { input.type = isCheckbox ? "checkbox" : "radio" });
 }
 
+var prevStar = 0;
+function starMouseOver(idx, value)
+{
+	star(idx, value);
+}
+function starMouseLeave(idx, value)
+{
+	star(idx, prevStar);
+}
+function starClick(idx, value)
+{
+	prevStar = value;
+	star(idx, value);
+}
+
 function star(idx, value)
 {
 	var question = document.getElementById("question_" + idx);
 
 	var stars = question.querySelectorAll(".star");
-	for(var i=0; i<value; i++)
+	for(var i=0; i<stars.length; i++)
 	{
-		if(i >= stars.length) break;
-		stars[i].checked = i < value;
+		if(i < value)
+			stars[i].setAttribute("checked", "checked");
+		else
+			stars[i].removeAttribute("checked", "checked");
 	}
 }

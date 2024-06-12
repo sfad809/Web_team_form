@@ -5,13 +5,13 @@
 	</head>
 	<body>
 		<header>
-			<iframe class="frame" src="menu_new.html" width="100%" height="100px" scrolling="no"></iframe>
+			<iframe class="frame" src="menu_0.html" width="100%" height="100px" scrolling="no"></iframe>
 		</header>
 
 		<main id="container">
 			<!-- Title -->
 			<fieldset class="question_container">
-				<input id="title" type="text" maxlength="16" placeholder="새 설문지">
+				<input id="title" type="text" maxlength="16" value="일정 잡기">
 				<hr style="background-color: #94d9f0;">
 
 				<input class="description" type="text" maxlength="32" placeholder="설문 설명">
@@ -40,10 +40,12 @@
 					<div class="option">
 						<input class="optionBtn" type="radio" name="0" disabled>
 						<input class="optionName" type="text" placeholder="옵션 1">
+						<input class="removeOption" type="button" value="삭제" onclick="removeOption(0,0)">
 					</div>
 					<div class="option">
 						<input class="optionBtn" type="radio" name="0" disabled>
 						<input class="optionName" type="text" placeholder="옵션 2">
+						<input class="removeOption" type="button" value="삭제" onclick="removeOption(0,1)">
 					</div>
 				</div>
 				<div class="etc">
@@ -86,7 +88,9 @@
 				</header>
 
 				<section class="menu_section">
-					<button type="button" class="chapter">새 질문</button>
+					<button type="button" class="chapter">참여 가능한 날짜를 모두 선택해주세요</button>
+					<hr>
+					<button type="button" class="chapter">선호하는 장소를 선택해주세요</button>
 					<hr>
 				</section>
 
@@ -162,12 +166,17 @@
 		</nav>
 
 		<script>
-			// 첫 번째는 set
-			// parameters [idx, title, description]
-			setQuestion(0, "", "");
-
 			// sidebar 메뉴 지정
 			showSection(0);
+
+			// 첫 번째는 set
+			setOptions(0, ["0월 0일 (금)", "0월 0일 (토)", "0월 0일 (일)"]);
+			setQuestion(0, "참여 가능한 날짜를 모두 선택해주세요", "설명 입력");
+
+			createNewElementWithOptions("선호하는 장소를 선택해주세요", "설명 입력", ["강남역", "정자역", "수내역"]);
+
+			createNewElement("기타 의견이 있으실 경우 자유롭게 작성해주세요", "");
+			changeOption(2, 3);
 		</script>
 	</body>
 </html>

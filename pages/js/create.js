@@ -12,6 +12,21 @@ function createNewElement(name, desc)
 	setQuestion(idx, name, desc);
 }
 
+function createNewElementWithOptions(name, desc, optionNames)
+{
+	var container = document.getElementById("container");
+	var child = container.lastElementChild;
+	var idx = container.children.length-1;
+
+	var clone = child.cloneNode(true);
+	clone.id = "question_" + idx;
+
+	container.appendChild(clone);
+
+	setOptions(idx, optionNames);
+	setQuestion(idx, name, desc);
+}
+
 function setQuestion(idx, name, desc)
 {
 	var question = document.getElementById("question_" + idx);
@@ -27,11 +42,47 @@ function setQuestion(idx, name, desc)
 
 	var rmv = question.querySelector(".removeQuestion");
 	if(idx == 0) rmv.style.display = "none";
-	else rmv.setAttribute("onclick", "removeQuestion("+idx+")");	
+	else
+	{
+		rmv.style.display = "block";
+		rmv.setAttribute("onclick", "removeQuestion("+idx+")");	
+	}
 
 	changeOptionType(idx);
 }
 
+function setOptions(idx, optionNames)
+{
+	var question = document.getElementById("question_" + idx);
+
+	var length = optionNames.length;
+	var optionContainer = question.querySelector(".options");
+	while(optionContainer.children.length < length)
+	{
+		var child = optionContainer.lastElementChild;
+		
+		var clone = child.cloneNode(true);
+		optionContainer.appendChild(clone);
+	}
+
+	var options = optionContainer.querySelectorAll(".optionName");
+	for(var i=0; i<length; i++)
+	{
+		options[i].setAttribute("value", optionNames[i]);
+	}
+}
+
+function changeOption(idx, value)
+{
+	var question = document.getElementById("question_" + idx);
+
+	var select = question.querySelector("select");
+	var options = select.querySelectorAll("option");
+	for(var i=0; i<options.length; i++)
+		options[i].selected = i == value;
+
+	changeOptionType(idx);
+}
 function changeOptionType(idx)
 {
 	var question = document.getElementById("question_" + idx);
@@ -85,6 +136,10 @@ function addOption(idx)
 	
 	var newNode = lastOption.cloneNode(true);
 	newNode.children[1].placeholder = "옵션 " + (length+2);
+
+	newNode.querySelector(".removeOption")
+		.setAttribute("onclick", "removeOption("+idx+","+(length+1)+")");
+
 	lastOption.after(newNode);
 }
 
@@ -102,6 +157,19 @@ function removeQuestion(idx)
 {
 	var q = document.getElementById("question_" + idx);
 	q.remove();
+}
+
+function removeOption(idx, value)
+{
+	var q = document.getElementById("question_" + idx);
+	var options = q.querySelectorAll(".option");
+
+	if(value < options.length) options[value].remove();
+
+	options = q.querySelectorAll(".option");
+	for(var i=0; i<options.length; i++)
+		options[i].querySelector(".removeOption")
+			.setAttribute("onclick", "removeOption("+idx+","+i+")");
 }
 
 function showSidebar()

@@ -121,7 +121,7 @@ function drawBarGraph(idx, data, optNames)
 		context.fillRect(0, 0, 5 * percentage, 70);
 
 		var pp = optionContainer.querySelector(".bar_percentage");
-		pp.innerText = data[i] + "(" + percentage.toFixed(1) + "%)";
+		pp.innerText = data[i] + "(" + (data[i]==0 ? "0" : percentage.toFixed(1)) + "%)";
 	}
 }
 
@@ -162,8 +162,8 @@ function drawPieChart(idx, data, optNames) {
 			var clone = pieOption.cloneNode(true);
 			options.appendChild(clone);
 		}
-
-		var option = options.lastElementChild;
+		var pies = pieChart.querySelectorAll(".chart_option");
+		var option = pies[i];
 
 		var optionCircle = option.querySelector(".option_circle");
 		optionCircle.innerText = optNames[i];
