@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+	<head>
+		<link rel="stylesheet" href="css/create.css">
+		<script src="js/create.js"></script>
+	</head>
+	<body>
+		<header>
+			<iframe class="frame" src="menu_2.html" width="100%" height="100px" scrolling="no"></iframe>
+		</header>
+
+		<main id="container">
+			<!-- Title -->
+			<fieldset class="question_container">
+				<input id="title" type="text" maxlength="16" value="이벤트 당첨 안내">
+				<hr style="background-color: #94d9f0;">
+
+				<input class="description" type="text" maxlength="32" placeholder="설문 설명">
+			</fieldset>
+
+			<!-- Question 0 -->
+			<fieldset id="question_0" class="question_container">
+				<textarea class="create_question_name" rows="2" cols="50" name="contents"
+					placeholder="질문 제목을 입력하세요" maxlength=50"></textarea>
+
+				<input class="removeQuestion" type="button" value="삭제" onclick="removeQuestion(0)">
+				
+				<select class="create_question_type" onchange="changeOptionType(0)">
+					<option>객관식</option>
+					<option>체크박스</option>
+					<option>단답형</option>
+					<option>장문형</option>
+					<option>별점형</option>
+				</select>
+				<br>
+
+				<input class="description" type="text" maxlength="32" placeholder="설문 설명">
+				<br>
+
+				<div style="font-size:0.7em" class="options">
+					<div class="option">
+						<input class="optionBtn" type="radio" name="0" disabled>
+						<input class="optionName" type="text" placeholder="옵션 1">
+						<input class="removeOption" type="button" value="삭제" onclick="removeOption(0,0)">
+					</div>
+					<div class="option">
+						<input class="optionBtn" type="radio" name="0" disabled>
+						<input class="optionName" type="text" placeholder="옵션 2">
+						<input class="removeOption" type="button" value="삭제" onclick="removeOption(0,1)">
+					</div>
+				</div>
+				<div class="etc">
+					<input class="optionBtn" type="radio" name="0" disabled>
+					<input class="optionName" type="text" placeholder="기타" disabled>
+				</div>
+
+				<div class="addButtons">
+					<input class="addOption" type="button" value="옵션 추가" onclick="addOption(0)">
+					<input class="addEtc" type="button" value="기타 추가" onclick="addEtc(0)">
+				</div>
+				
+				<input class="answer" type="text" placeholder="단답형 텍스트" disabled>
+				<textarea class="long_answer" placeholder="장문형 텍스트" rows="4" cols="64" disabled></textarea>
+
+				<div class="star-rating">
+					<input type="checkbox" class="star" name="star_0" disabled>
+					<input type="checkbox" class="star" name="star_0" disabled>
+					<input type="checkbox" class="star" name="star_0" disabled>
+					<input type="checkbox" class="star" name="star_0" disabled>
+					<input type="checkbox" class="star" name="star_0" disabled>
+				</div>
+			</fieldset>
+		</main> <!-- container end-->
+
+		<footer class="footer">
+			<fieldset class="new_question_button" onclick="createNewElement('','')">새 질문</fieldset>
+		</footer>
+
+		<!-- sidebar -->
+		<nav>
+			<input id="showSidebar" type="button" onclick="showSidebar()" value="menu">
+			
+			<fieldset class="small_menu">
+				<header class="menu_headers">
+					<div class="header" onclick="showSection(0)">목차<hr></div>
+					<div class="header" onclick="showSection(1)">꾸미기<hr></div>
+					<div class="header" onclick="showSection(2)">설정<hr></div>
+					<div class="header" id="menu_close" onclick="hideSidebar()">닫기<hr></div>
+				</header>
+
+				<section class="menu_section">
+					<button type="button" class="chapter">참여 가능한 날짜를 모두 선택해주세요</button>
+					<hr>
+					<button type="button" class="chapter">선호하는 장소를 선택해주세요</button>
+					<hr>
+				</section>
+
+				<section class="menu_section">
+					<h3 class="first">색상</h3>
+					<h4 class="second">주요 색상</h4>
+					<ul class="colorList">
+						<li><button type="button" class="color" id="color1"></button></li>
+						<li><button type="button" class="color" id="color2"></button></li>
+						<li><button type="button" class="color" id="color3"></button></li>
+						<li><button type="button" class="color" id="color4"></button></li>
+						<li><button type="button" class="color" id="color5"></button></li>
+						<li><button type="button" class="color" id="color6"></button></li>
+						<li><button type="button" class="color" id="color7"></button></li>
+						<li><button type="button" class="color" id="color8"></button></li>
+					</ul>
+					<h4 class="second">배경 색상</h4>
+					<ul class="colorList">
+						<li><button type="button" class="color" id="color9"></button></li>
+						<li><button type="button" class="color" id="color10"></button></li>
+						<li><button type="button" class="color" id="color11"></button></li>
+						<li><button type="button" class="color" id="color12"></button></li>
+						<li><button type="button" class="color" id="color13"></button></li>
+						<li><button type="button" class="color" id="color14"></button></li>
+						<li><button type="button" class="color" id="color15"></button></li>
+						<li><button type="button" class="color" id="color16"></button></li>
+					</ul>
+					<h3 class="first">글꼴</h3>
+					<select class="color_selection">
+						<option selected id="color_option1">나눔 스퀘어</option>
+						<option id="color_option2">나눔고딕</option>
+						<option id="color_option3">나눔명조</option>
+						<option id="color_option4">나눔바른고딕</option>
+						<option id="color_option5">마루부리</option>
+					</select>
+				</section>
+
+				<section class="menu_section">
+					<h3 class="first">설문 참여</h3>
+					<label>
+						<input type="checkbox" name="settings">
+						<h4 class="second">최대 참여 수</h4>
+					</label>
+					<p class="paragraph">설정한 참여 수에 도달하면 설문이 자동 종료됩니다</p>
+					<hr>
+					<input type="checkbox" name="settings">
+					<label>
+						<h4 class="second">로그인 필수</h4>
+						<p class="paragraph">설문 참여를 위해 네이버 로그인이 필요합니다</p>
+					</label>
+					<hr>
+					<h3 class="first">참여자 권한 설정</h3>
+					<label>
+						<input type="checkbox" name="settings">
+						<h4 class="second">답변 확인 허용</h4>
+					</label>
+					<p class="paragraph">설문 참여 후, 본인이 작성한 답변을 확인할 수 있습니다</p>
+					<label>
+						<input type="checkbox" name="settings">
+						<h4 class="second">답변 수정 허용</h4>
+					</label>
+					<p class="paragraph">설문 참여 후, 본인이 작성한 답변을 수정할 수 있습니다</p>
+					<hr>
+					<label>
+						<input type="checkbox" name="settings">
+						<h4 class="second">설문 결과 공개</h4>
+					</label>
+					<p class="paragraph">참여자에게 설문 결과를 공개합니다</p>
+					<p class="paragraph">개인정보 수집 및 제공 동의를 받는 설문은 결과를 공개할 수 <br>없습니다</p>
+					<hr>
+				</section>
+			</fieldset>
+		</nav>
+
+		<script>
+			// sidebar 메뉴 지정
+			showSection(0);
+
+			// 첫 번째는 set
+			setQuestion(0, "전반적인 과정이 얼마나 만족스러우셨나요?", "설명 입력");
+			changeOption(0, 4);
+
+			createNewElement("개선되었으면 하는 사항을 자유롭게 적어주세요");
+			changeOption(1, 3);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/survey.css">
+		<script src="js/survey.js"></script>
+	</head>
+	<body>
+		<iframe class="frame" src="../menu_list.html" width="100%" height="100px" scrolling="no"></iframe>
+
+		<div id="container">
+			<fieldset class="question_container">
+				<h1 id="title">내 설문지</h1>
+				<hr style="background-color: rgb(231, 168, 231);">
+
+				<p class="description">설명</p>
+				<hr>
+				
+				<p id="account">123123144@gmail.com <a href="https://accounts.google.com" target="_blank">계정 전환</a></p>
+			</fieldset>
+
+			<!-- Form -->
+			<form>
+				<fieldset id="question_0" class="question_container">
+					<div>
+						<h3 class="question_name">질문 제목</h3>
+						<p class="description">설명</p>
+						<hr>
+					</div>
+
+					<!-- radio checkbox -->
+					<div class="options">
+						<label class="option">
+							<input class="optionBtn" type="radio" name="question_0">
+							<div class="optionName">옵션 1</div>
+						</label>
+						<label class="option">
+							<input class="optionBtn" type="radio" name="question_0">
+							<div class="optionName">옵션 2</div>
+						</label>
+					</div>
+				
+					<!-- 단답형 -->
+					<input class="answer" type="text" minlength="3" maxlength="12">
+
+					<!-- 장문형 -->
+					<textarea class="long_answer" rows="4" cols="64"></textarea>
+
+					<!-- 별점형 -->
+					<div class="star_rating">
+						<input type="checkbox" class="star" name="star_0"
+							onmouseover="starMouseOver(0,1)" onmouseleave="starMouseLeave(0,1)" onclick="starClick(0,1)">
+						<input type="checkbox" class="star" name="star_0"
+							onmouseover="starMouseOver(0,2)" onmouseleave="starMouseLeave(0,2)" onclick="starClick(0,2)">
+						<input type="checkbox" class="star" name="star_0"
+							onmouseover="starMouseOver(0,3)" onmouseleave="starMouseLeave(0,3)" onclick="starClick(0,3)">
+						<input type="checkbox" class="star" name="star_0"
+							onmouseover="starMouseOver(0,4)" onmouseleave="starMouseLeave(0,4)" onclick="starClick(0,4)">
+						<input type="checkbox" class="star" name="star_0"
+							onmouseover="starMouseOver(0,5)" onmouseleave="starMouseLeave(0,5)" onclick="starClick(0,5)">
+					</div>
+				</fieldset>
+
+				<div>
+					<button class="btn_submit" style="float:left;" type="button">이전</button>
+					<button class="btn_submit" style="float:right;" type="submit">다음</button>
+				</div>
+			</form>
+			<!-- Form End -->
+		</div>
+		<!-- container end -->
+
+		<script>
+			// 첫 번째는 set
+			// parameters [idx, name, description, type, options]
+			setQuestion(0, "질문입니다", "설명", 4, null);
+
+			/* createNewElement(title, description, type, options)
+				type
+					0 : radio		options : options
+					1 : checkbox	options : options
+					2 : text		options : placeholder
+					3 : textarea	options : placeholder
+					4 : star		options : null
+			*/
+			createNewElement("질문", "설명", 2, "입력해주세요");
+		</script>
+	</body>
+</html>
