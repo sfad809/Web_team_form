@@ -8,7 +8,7 @@
 
 		<div id="container">
 			<fieldset class="question_container">
-				<h1 id="title">고객 만족도 조사</h1>
+				<h1 id="title">이벤트 당첨 안내</h1>
 				<hr>
 
 				<div class="description">설명</div>
@@ -53,9 +53,9 @@
 		<script>
 			// 첫 번째는 set
 			// parameters [idx, name, description, type, optionDatas, optionNames]
-			setQuestion(0, "전반적인 과정이 얼마나 만족스러우셨나요?", "설명", 0,
-				[3, 0, 1, 5, 6], // optionDatas
-				["1", "2", "3", "4", "5"] // optionNames
+			setQuestion(0, "이름?", "설명", 2,
+				["한재승", "한준탁"], // optionDatas
+				null // optionNames
 			);
 
 			// createNewElement(name, description, type, optionDatas, optionNames)
@@ -64,10 +64,12 @@
 				1	pieChart	data	names
 				2	answer		data	null
 			*/
-			createNewElement("개선되었으면 하는 사항을 자유롭게 적어주세요", "설명", 2,
-				["알바가 불친절해요", "로켓 배송인데 원래 이렇게 늦나요?", "자고 있는데 초인종을 누르시더라구요..벨 없이 배달해달라고 했는데 ㅠㅠ", "맛있어요"],
+			createNewElement("연락처", "", 2,
+				["010-2343-2344", "010-8383-4904"],
 				null
 			);
+
+			createNewElement("주소", "", 2, [], null);
 		</script>
 	</body>
 </html>
